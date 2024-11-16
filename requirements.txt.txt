@@ -1,0 +1,8 @@
+albumentations
+gradio
+logging
+numpy
+opencv-python
+shapely
+torch
+
