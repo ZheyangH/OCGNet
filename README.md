@@ -57,7 +57,7 @@ python train.py --few_shot_test --pretrain saved_models/model_droneaerial_few_sh
 ```
 
 # Gradio demo for Drone to Satellite
-We provide a OCGNet [ckpt](https://drive.google.com/file/d/1djeXyPwfjLlqE3STJVbdIqKx7oad7QPg/view?usp=sharing) with a standard deviation of 0.1 for download, place the .pth file in the following path: 'saved_models/'. Meanwhile, place the [DetGeo ckpt](https://drive.google.com/file/d/1UbNQ7bfxX4356jyCrzqfv184aWbT2ZyW/view?usp=sharing) into same path.
+We provide two Drone to satellite OCGNet [ckpt1](https://drive.google.com/file/d/1djeXyPwfjLlqE3STJVbdIqKx7oad7QPg/view?usp=sharing) with a standard deviation of 0.1 and [ckpt2](https://drive.google.com/file/d/1ZoFyF4uhuBwfzNVHcp4kwMpd2rlEZJNl/view?usp=drive_link) with a standard deviation of 0.075 for download, place the .pth file in the following path: 'saved_models/'. Meanwhile, place the [DetGeo ckpt](https://drive.google.com/file/d/1UbNQ7bfxX4356jyCrzqfv184aWbT2ZyW/view?usp=sharing) into same path.
 Run the following command to use the Gradio UI.
 ```
 python src/demo.py
