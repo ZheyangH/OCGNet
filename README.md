@@ -65,4 +65,5 @@ python src/demo.py
 
 # Others
 1. acknowledge the work from [Cross-view Object Geo-localization](https://github.com/sunyuxi/DetGeo) and [YoloV3](https://github.com/patrick013/Object-Detection---Yolov3)
-2. For any questions or issues, open an issue or contact Zheyang Huang(jasonhuang1999cn@gmail.com)
+2. This research is supported by the Australian Research Council (ARC).
+3. For any questions or issues, open an issue or contact Zheyang Huang(jasonhuang1999cn@gmail.com)
