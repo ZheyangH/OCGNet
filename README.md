@@ -56,8 +56,35 @@ python train.py --test --pretrain saved_models/model_svi_model_best.pth.tar --em
 python train.py --few_shot_test --pretrain saved_models/model_droneaerial_few_shot_best.pth.tar --emb_size 512 --img_size 1024 --data_root data --data_name CVOGL_DroneAerial --savename few_shot_model_DetGeo_droneaerial --gpu 0 --batch_size 8 --num_workers 16 --print_freq 5
 ```
 
-# Gradio demo for Drone to Satellite
+# Gradio demo for Drone to Satellite and different backbones
 We provide two Drone to satellite OCGNet [ckpt1](https://drive.google.com/file/d/1djeXyPwfjLlqE3STJVbdIqKx7oad7QPg/view?usp=sharing) with a standard deviation of 0.1 and [ckpt2](https://drive.google.com/file/d/1ZoFyF4uhuBwfzNVHcp4kwMpd2rlEZJNl/view?usp=drive_link) with a standard deviation of 0.075 for download, place the .pth file in the following path: 'saved_models/'. Meanwhile, place the [DetGeo ckpt](https://drive.google.com/file/d/1UbNQ7bfxX4356jyCrzqfv184aWbT2ZyW/view?usp=sharing) into same path.
+For the different backbones, we provide the ConvNeXT-Tiny version, [drone]([https://drive.google.com/file/d/1djeXyPwfjLlqE3STJVbdIqKx7oad7QPg/view?usp=sharing](https://drive.google.com/file/d/1duJ-WmuEsyv6PReNe5HNPHUfvg0LLrC3/view?usp=sharing)) and [svi]([https://drive.google.com/file/d/1djeXyPwfjLlqE3STJVbdIqKx7oad7QPg/view?usp=sharing](https://drive.google.com/file/d/1uv_SURFVVeVfyzeO_U2IsaPprWr0P_km/view?usp=sharing))
+Replace the resnet18 code in OCGNet.py file
+```
+class MyConvNeXt(nn.Module):
+    def __init__(self):
+        super(MyConvNeXt, self).__init__()
+        # Load pretrained convnext_tiny
+        self.base_model = convnext_tiny(weights=ConvNeXt_Tiny_Weights.IMAGENET1K_V1)
+        
+        self.early_stem = nn.Sequential(
+            self.base_model.features[0],  # stem: [B, 96, 64, 64]
+        )
+        
+        self.forward_features = nn.Sequential(
+            *self.base_model.features[1:]  # [B, 768, 8, 8]
+        )
+        
+        self.projector = nn.Conv2d(768, 512, kernel_size=1)
+
+    def forward(self, x):
+        early_features = self.early_stem(x)           # [B, 96, 64, 64]
+        x = self.forward_features(early_features)     # [B, 768, 8, 8]
+        x = self.projector(x)                         # [B, 512, 8, 8]
+        return x, early_features
+ 
+```
+
 Run the following command to use the Gradio UI.
 ```
 python src/demo.py
