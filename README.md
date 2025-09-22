@@ -1,5 +1,5 @@
 # Object-level Cross-view Geo-localization with Location Enhancement and Multi-Head Cross Attention
-
+[Paper link](https://doi.org/10.1109/JSTARS.2025.3603506)
 # Benchmark Dataset
 The benchmark dataset we use is [Cross-view Object Geo-localization](https://github.com/sunyuxi/DetGeo)
 
@@ -88,6 +88,12 @@ class MyConvNeXt(nn.Module):
 Run the following command to use the Gradio UI.
 ```
 python src/demo.py
+```
+
+Cite this paper
+```
+Z. Huang et al., "Object-Level Cross-View Geolocalization With Location Enhancement and Multihead Cross Attention," in IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, vol. 18, pp. 22880-22890, 2025, doi: 10.1109/JSTARS.2025.3603506.
+keywords: {Location awareness;Satellite images;Drones;Feature extraction;Australia;Accuracy;Satellites;Kernel;Standards;Object recognition;Attention;cross-view matching;geolocalization;object detection},
 ```
 
 # Others
