@@ -85,6 +85,8 @@ class MyConvNeXt(nn.Module):
  
 ```
 <img width="1310" height="633" alt="image" src="https://github.com/user-attachments/assets/4765a105-1a71-4afe-9478-4f50d73b3d3e" />
+<img width="1260" height="638" alt="image" src="https://github.com/user-attachments/assets/664bf322-fff7-4bfd-be0d-899cf891aab0" />
+
 Run the following command to use the Gradio UI, you can click the query image to generate query-image with click-point.
 
 ```
