@@ -95,8 +95,16 @@ python src/demo.py
 
 Cite this paper
 ```
-Z. Huang et al., "Object-Level Cross-View Geolocalization With Location Enhancement and Multihead Cross Attention," in IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, vol. 18, pp. 22880-22890, 2025, doi: 10.1109/JSTARS.2025.3603506.
-keywords: {Location awareness;Satellite images;Drones;Feature extraction;Australia;Accuracy;Satellites;Kernel;Standards;Object recognition;Attention;cross-view matching;geolocalization;object detection},
+@ARTICLE{11142913,
+  author={Huang, Zheyang and Aryal, Jagannath and Nahavandi, Saeid and Lu, Xuequan and Lim, Chee Peng and Wei, Lei and Zhou, Hailing},
+  journal={IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing}, 
+  title={Object-Level Cross-View Geolocalization With Location Enhancement and Multihead Cross Attention}, 
+  year={2025},
+  volume={18},
+  number={},
+  pages={22880-22890},
+  keywords={Location awareness;Satellite images;Drones;Feature extraction;Australia;Accuracy;Satellites;Kernel;Standards;Object recognition;Attention;cross-view matching;geolocalization;object detection},
+  doi={10.1109/JSTARS.2025.3603506}}
 ```
 
 # Others
